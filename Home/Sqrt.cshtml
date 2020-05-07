@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Sqrt Page";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Enter your numbers below.</p>
+
+@{
+    if(ViewBag.Result1 >  ViewBag.Result2)
+    {
+    <div>
+        <p> The number @ViewBag.Result3 with square root  @ViewBag.Result1 has a higher square root than the number @ViewBag.Result4 with square root: @ViewBag.Result2</p>
+    </div>
+    } 
+    else if (ViewBag.Result2 > ViewBag.Result1)
+    {
+    <div>
+        <p> The number @ViewBag.Result4 with square root  @ViewBag.Result2 has a higher square root than the number @ViewBag.Result3 with square root: @ViewBag.Result1</p>
+    </div>
+
+    }
+    else if (ViewBag.Result1 == ViewBag.Result2)
+    {
+        <div>
+            <p>Your numbers have the same square root, Please enter another numbers.</p>
+        </div>
+    }
+    else if ( ViewBag.Result3 < 0 )  
+    {
+        <div>
+            <p>Number must not be less than zero.</p>
+        </div>
+    }
+    else if (ViewBag.Result4 < 0)
+    {
+        <div>
+            <p>Number must not be less than zero.</p>
+        </div>
+
+    }
+    else if (ViewBag.Result3 == ViewBag.Result5)
+    {
+        <div>
+             <p>Input must be a number.</p>
+        </div>
+
+    }
+    else 
+    {
+        <div>
+             <p>Input must be a number.</p>
+        </div>
+    }
+
+
+}
+<div>
+
+    <form asp-controller="Home" asp-action="Sqrt" method = "POST">
+       
+        <input type="number" placeholder = "firstnumber" name ="firstnumber"/>
+        <input type="number" placeholder = "secondnumber" name= "secondnumber"/>
+        <button ="submit"></button>
+
+    </form>
+
+</div>
